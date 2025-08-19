@@ -1,0 +1,6 @@
+.profile-page{padding:32px;display:flex;justify-content:center}
+.profile-card{background:#22262a;padding:28px;border-radius:8px;color:#e6eef6;text-align:center;width:360px}
+.profile-card .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.04);box-shadow:0 4px 14px rgba(0,0,0,0.5)}
+.profile-card h2{margin:12px 0 4px}
+.profile-card .email{opacity:0.8;font-size:14px}
+.profile-card .joined{margin-top:12px;font-size:14px}
