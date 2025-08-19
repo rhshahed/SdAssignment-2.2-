@@ -11,7 +11,7 @@ const TITLES = [
 	'Quick Editing Checklist',
 ];
 
-// Build a simple list of articles so pagination is clear and the logic is easy to follow.
+
 const articles = [];
 const STATUSES = ['Published', 'Draft', 'Review'];
 for (let i = 0; i < 23; i++) {
