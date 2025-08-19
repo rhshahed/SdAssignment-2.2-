@@ -5,23 +5,30 @@ import Articles from './Articles';
 import './Dashboard.css';
 
 export default function Dashboard() {
+	// UI state
 	const [collapsed, setCollapsed] = useState(false);
-	const [active, setActive] = useState('articles');
+	const [active, setActive] = useState('articles'); // 'articles' or 'profile'
 
-		return (
-			<div className="dashboard-root">
-				<Sidebar collapsed={collapsed} onToggle={() => setCollapsed(c => !c)} active={active} onNavigate={setActive} />
+	// Named handlers make the code easier to follow than inline arrow toggles
+	const toggleSidebar = () => setCollapsed(prev => !prev);
+	const navigateTo = (page) => setActive(page);
 
-				<div className={"main " + (collapsed ? 'main-collapsed' : '')}>
-					<div className="topbar">
-						<button className="top-hamburger" onClick={() => setCollapsed(c => !c)} aria-label="Toggle sidebar">≡</button>
-						<div className="title">{active === 'articles' ? 'My Articles' : 'Profile'}</div>
-					</div>
+	const pageTitle = active === 'articles' ? 'My Articles' : 'Profile';
 
-					<div className="content">
-						{active === 'articles' ? <Articles /> : <Profile />}
-					</div>
+	return (
+		<div className="dashboard-root">
+			<Sidebar collapsed={collapsed} onToggle={toggleSidebar} active={active} onNavigate={navigateTo} />
+
+			<div className={`main ${collapsed ? 'main-collapsed' : ''}`}>
+				<div className="topbar">
+					<button className="top-hamburger" onClick={toggleSidebar} aria-label="Toggle sidebar">≡</button>
+					<div className="title">{pageTitle}</div>
+				</div>
+
+				<div className="content">
+					{active === 'articles' ? <Articles /> : <Profile />}
 				</div>
 			</div>
-		);
+		</div>
+	);
 }

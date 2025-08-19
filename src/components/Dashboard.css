@@ -1,7 +1,7 @@
-.dashboard-root{display:flex;min-height:100vh;background:#0f1112;color:#e6eef6}
+.dashboard-root{display:flex;min-height:100vh;background:var(--bg);color:var(--text)}
 .main{flex:1;display:flex;flex-direction:column}
 .main-collapsed{margin-left:64px}
-.topbar{height:56px;background:#222;display:flex;align-items:center;padding:0 20px;box-shadow:0 1px 0 rgba(255,255,255,0.02)}
-.topbar .title{font-size:18px;margin-left:12px}
+.topbar{height:56px;background:var(--topbar);display:flex;align-items:center;padding:0 20px;box-shadow:0 1px 0 rgba(255,255,255,0.02)}
+.topbar .title{font-size:18px;margin-left:12px;color:var(--text)}
 .top-hamburger{background:none;border:none;color:inherit;font-size:20px;cursor:pointer}
 .content{flex:1}
